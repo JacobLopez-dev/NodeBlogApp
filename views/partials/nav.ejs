@@ -1,24 +1,30 @@
-<header class="container-fluid">
-<!--Nav Bar-->
-<nav class="navbar navbar-expand-lg navbar-light">
-    <!--brand-->
-    <span class="navbar-brand mb-0 h1">Daily Journal</span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navication">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarToggler">
-        <!--Nav bar-->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/register">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-</header>
+   
+   <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <!--brand-->
+        <a class="navbar-brand" href="">
+            <i class="fas fa-book"></i>
+            My Journal
+        </a>
+        <!--Toggler-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navication">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--links-->
+        <div class="collapse justify-content-end navbar-collapse" id="navbarToggler">
+            <ul class="nav nav-pills ">
+                <li class="nav-item">
+                  <a class="nav-link btn btn-primary" href="#">Compose</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link btn btn-outline-light dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">FAQ</a>
+                    <a class="dropdown-item" href="#">Contact</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Log out</a>
+                  </div>
+                </li>
+              </ul>
+         </div>
+      </nav>
