@@ -1,0 +1,22 @@
+<% include ../partials/header.ejs %>
+
+<% include ../partials/nav.ejs %>
+
+<div class="entry container">
+<h1>New Journal Entry</h1>
+    <form action="/compose" method="POST">
+        <!--Title-->
+        <div class="form-group">
+            <label>Title</label>
+            <input class="form-control" type="text" name="blogTitle">
+
+        <!--Post-->
+            <label>Post</label>
+            <textarea class="form-control" name="blogPost" rows="5" cols="30"> </textarea>
+        </div>
+        <div>
+            <button class="compose btn btn-primary" type="submit">Publish</button>
+    </form>
+    
+</div>
+<% include ../partials/footer.ejs %>

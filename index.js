@@ -35,9 +35,15 @@ const userSchema = new mongoose.Schema({
     password: String
 });
 
+const postSchema = new mongoose.Schema({
+        title: String,
+        content: String
+});
+
 userSchema.plugin(passportLocalMongoose);
 
 const User = new mongoose.model("User", userSchema);
+const Post = new mongoose.model("Post", postSchema)
 
 passport.use(User.createStrategy());
 
@@ -57,12 +63,37 @@ app.get('/login', (req, res) => res.render('pages/login'));
 
 //User Journal page
 app.get('/journal', function(req, res){
+
     if(req.isAuthenticated()){
-        res.render("pages/journal");
+        Post.find({}, function(err, posts){
+            if(err){
+                console.log(err);
+            } else {
+                if(posts){
+                    res.render("pages/journal", {posts: posts})
+                }
+            }
+        });
     } else{
         res.redirect("/login");
     }
 });
+
+//Compose page
+app.get('/compose', function(req, res ){
+
+    if(req.isAuthenticated()){
+        res.render('pages/compose');
+    }else{
+        res.redirect('/login');
+    }
+});
+
+//logout
+app.get("/logout", function(req, res){
+    req.logout();
+    res.redirect("/");
+})
 
 
 ///POST requests///
@@ -100,11 +131,18 @@ app.post('/login', function(req, res){
     });
 });
 
-//logout
-app.get("/logout", function(req, res){
-    req.logout();
-    res.redirect("/");
-})
+app.post('/compose', function(req, res){
+
+    const post = new Post({
+        title: req.body.blogTitle,
+        content: req.body.blogPost
+    });
+    
+    post.save(function(){
+        res.redirect("/journal")
+    });
+    
+});
 
 
 
