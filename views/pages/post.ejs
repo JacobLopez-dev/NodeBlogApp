@@ -1,0 +1,22 @@
+<% include ../partials/header.ejs %>
+
+<% include ../partials/nav.ejs %>
+
+
+<div class="journal container">
+    <div class="card">
+        <div class="card-header"><h2><%=title%></h2></div>
+        <div class="card-body">
+          <p class="card-text"><%=content%></p>
+        </div>
+    </div>
+</div>
+
+    <a class="deleteBtn" href="/delete">
+        <button class="btn btn-outline-danger" type="submit">Delete</button>
+    </a>
+
+
+<% include ../partials/footer.ejs %>
+
+

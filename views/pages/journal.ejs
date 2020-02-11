@@ -8,16 +8,23 @@
       <p class="lead">Welcome to My Journal. Here you are free to keep all of your thoughts, ideas, dreams, and wishes. Click the pencil to begin composing a new journal entry</p>
     </div>
 
-
     <% posts.forEach(function(post){ %>
-      <h2>Title: <%=post.title%></h2>
-      <p> Post: <%=post.content.substring(0,100)%>
-    </p>
-
-   <% }) %>
+    <div class="card">
+      <div class="card-header">
+        <%=post.title%>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <%=post.content.substring(0,100)%>
+          <a href="/posts/<%=post._id%>">Read More</a>
+        </p>
+      </div>
+    </div>
+    <br>
+    <% }) %>
 
 </div>
-<a class="compose" href="/compose">
+<a class="composeBtn" href="/compose">
   <button class="btn btn-lg btn-primary" type="submit"><i class="fas fa-pencil-alt"></i></button>
 </a>
 

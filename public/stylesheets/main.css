@@ -50,4 +50,5 @@
   margin-top: 150px;
 }
 
-.compose{ position: fixed; bottom: 20px; right: 20px; }
+.composeBtn{ position: fixed; bottom: 20px; right: 20px; }
+.deleteBtn{ position: fixed; bottom: 20px; right: 20px; }

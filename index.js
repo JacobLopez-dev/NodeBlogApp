@@ -89,11 +89,35 @@ app.get('/compose', function(req, res ){
     }
 });
 
+//Post page
+app.get("/posts/:postId", function(req, res){
+
+    const requestedPostId = req.params.postId;
+    Post.findOne({_id: requestedPostId}, function(err, post){
+        res.render('pages/post',{
+            title: post.title,
+            content: post.content
+        });
+    });
+});
+
 //logout
 app.get("/logout", function(req, res){
     req.logout();
     res.redirect("/");
 })
+
+app.get("/delete", function(req, res){
+    const requestedPostId = req.params.postId;
+    Post.deleteOne({requestedPostId}, function(err){
+        if(err){
+            console.log(err);
+        } else{
+            res.redirect("/journal");
+        }
+    });
+});
+
 
 
 ///POST requests///
