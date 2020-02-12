@@ -49,6 +49,17 @@
 .entry{
   margin-top: 150px;
 }
+.qna{
+  margin-top: 150px;
+}
+
+.qna .jumbotron{
+  background-image: url("../images/qna.jpg");
+  padding-top: 325px;
+  height: 550px;
+  background-position: center;
+  background-size: cover;
+}
 
 .composeBtn{ position: fixed; bottom: 20px; right: 20px; }
 .deleteBtn{ position: fixed; bottom: 20px; right: 20px; }

@@ -101,6 +101,9 @@ app.get("/posts/:postId", function(req, res){
     });
 });
 
+//Q&A page
+app.get('/qna', (req, res) => res.render('pages/qna'));
+
 //logout
 app.get("/logout", function(req, res){
     req.logout();
