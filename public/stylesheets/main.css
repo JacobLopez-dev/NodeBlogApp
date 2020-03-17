@@ -12,6 +12,33 @@
   margin-right:10px;
 }
 
+
+section .feature-image{
+  height: 450px;
+  text-align: center;
+  background-image: url("../images/journal.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+}
+
+section .register{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ 
+ 
+}
+
+#features{
+  padding: 7% 15%;
+}
+.feature-box{
+  text-align: center;
+  padding: 5%;
+}
+
 .form-signin {
   width: 100%;
   max-width: 330px;

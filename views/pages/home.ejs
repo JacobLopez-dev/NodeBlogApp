@@ -1,24 +1,34 @@
 <% include ../partials/header.ejs %>
 
-<div class="container-fluid">
-    <div class="card text-center">
-        <div class="card-header">
-            <i class="fas fa-book fa-7x"></i>
-            <h1>Daily Journal</h1>
-        </div>
 
-        <div class="card-body">
-          <h5 class="card-title">Welcome to my Node application</h5>
-          <p class="card-text">This application was built with the purpose of displaying my capability to <br>
-              put together an application front to back using Node, Express, EJS, and MongoDB </p>
-            
-            <a href="/register" class="btn btn-primary">Register</a>
-            <a href="/login" class="btn btn-primary">Login</a>
-        </div>
-      </div>
-</div>
+<% include ../partials/home-nav.ejs %>
+
+<section class="container">
+  <div class="row">
+    <div class="feature-image col-sm-12 col-md-12 col-lg-6">
+    </div>
+    <div class="register col-sm-12 col-md-12 col-lg-6">
+      <form class="form-signin" action="/register" method="POST">
+        <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please register to use Daily Journal!</h1>
+        <!--Email-->
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="username" required autofocus>
+        <br>
+        <!--Password-->
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <p>Already have an account? <a href="/login" class="btn btn-link">Login</a></p>
+      </form>
+    </div>
+  </div>
+</section>
 
 
+<% include ../partials/features.ejs %>
 
 
 <% include ../partials/footer.ejs %>
+
+
